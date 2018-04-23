@@ -23,6 +23,44 @@
 			<p>Ваш браузер не поддерживает скрипты!
 				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
 		</noscript>
+		<div class="form-modal modal fade animated" id="formModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+	
+					<div class="modal-body">
+	
+						 <!-- success-info -->
+						<div class="col-md-12 success-info m-b-30 text-center">
+							<font color="red"><div class="info-suc" id=""></div></font>
+							<font color="green"><div class="info-err" id=""></div></font>
+						</div>
+	
+						<form method="POST" action="">
+						
+							<h3>Связаться с нами</h3>
+	
+							<!-- NAME -->
+							<label for="input-1">
+								<span data-content="Имя, фамилия">Имя, фамилия</span>
+							</label>
+							<input type="text" class="form-control" name="name">
+	
+							<!-- TEL -->
+							<label for="input-3">
+								<span data-content="Номер телефона">Номер телефона</span>
+							</label>
+							<input type="text" class="form-control" name="tel">
+							<br>
+							<div class="form-footer">
+								<button type="submit" class="text-right btn-def color-white submit"><b>Отправить</b></button>
+							</div>
+	
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- HEADER -->
 		<div class="header-hidden"></div>
 		<header id="header" class="header-scroll" data-aos="fade">
@@ -36,15 +74,15 @@
 						<div class="logo pie-md pie-dry p-h-15">
 							<div class="img-content pie-md pie-dry">
 								<a href="index.html">
-									<img src="img/logo.png">
+									<img src="img/logo.png" style="width: 170px;">
 								</a>
 							</div>
 						</div>
 					
-						<div class="menu text-left pie-md-9 m-v-15 p-h-15">
+						<div class="menu text-center text-uppercase pie-md-9 m-v-15 p-h-15">
 							<nav>
 								<ul>
-									<li><a href="index.html" title="">Home</a></li>
+									<li class="active"><a href="index.html" title="">Home</a></li>
 									<li><a href="about.html" title="">About</a></li>
 									<li><a href="industries.html" title="">Industries</a></li>
 									<li><a href="practices.html" title="">Practices</a></li>
@@ -55,13 +93,19 @@
 						</div>
 
 						<div class="phones pie-md text-nowrap pie-dry p-h-15">
-							<span class="vam">
-								<img src="img/icons/phone-call.png" alt="">
-							</span>
 							<span class="vam p-l-15">
 								<p> +998 (97) 777-00-00 </p>
-								<p> +998 (97) 777-00-00 </p>
+								<span class="btn-opacity m-v-5">
+									<a style="padding: 2px 10px;" data-toggle="modal" data-target="#formModal" role="button">contact us</a>
+								</span>
 							</span>
+						</div>
+
+						<div class="lang pie-md p-h-15 text-center text-uppercase">
+							<ul>
+								<li><a href="" title="Русский">Ru</a></li>
+								<li class="active"><a href="" title="English">Eng</a></li>
+							</ul>
 						</div>
 
 					</div>
@@ -102,417 +146,153 @@
 		<!-- MAIN -->
 		<main data-aos="fade" data-aos-delay="0">
 
-			<!-- REV SLIDER -->
-			<div class="main-slider">
-				<div class="fullscreen-container">
-
-					<div class="rev-slider bg-color-white">
-						<ul>
-							<li data-transition="zoomin" data-masterspeed="1200">
-								<img src="img/slider/slide-1.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-							<li data-transition="zoomin" data-masterspeed="1200">
-								<img src="img/slider/slide-2.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="arrow-container container"></div>
-				</div>
-			</div><!-- ./END SLIDER -->
 			
 			<div class="main-content over-hidden">
-
-				<!-- short-news -->
-				<div class="short-news bg-color-gray">
-					<div class="container p-v-30 over-hidden">
-						<div class="entry-header">
-							<h1 class="color-1">Новости</h1>
-						</div>
-						<div class="short-news-items m-v-30 boxes-4 figure-m-v-30">
-
-							<figure class="bg-color-white p-h-20 p-v-20">
-								<div class="img-content radius-1 over-hidden">
-									<img src="img/news/short-1.jpg" alt="">
-								</div>
-								<div class="desc-content m-v-15">
-									<h4>Lorem ipsum</h4>
-									<div class="content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-									</div>
-									<div class="date color-gray m-v-15"><p>12 Декабря 2017</p></div>
-									<div class="link-content">
-										<span class="color-1">
-											<a href="news-article.html" title="Lorem ipsum"><b>Подробнее</b></a>
-											<i class="fa p-l-15 fa-caret-right vam"></i>
-										</span>
-									</div>
-								</div>
-							</figure>
-							<figure class="bg-color-white p-h-20 p-v-20">
-								<div class="img-content radius-1 over-hidden">
-									<img src="img/news/short-2.jpg" alt="">
-								</div>
-								<div class="desc-content m-v-15">
-									<h4>Lorem ipsum</h4>
-									<div class="content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-									</div>
-									<div class="date color-gray m-v-15"><p>12 Декабря 2017</p></div>
-									<div class="link-content">
-										<span class="color-1">
-											<a href="news-article.html" title="Lorem ipsum"><b>Подробнее</b></a>
-											<i class="fa p-l-15 fa-caret-right vam"></i>
-										</span>
-									</div>
-								</div>
-							</figure>
-							<figure class="bg-color-white p-h-20 p-v-20">
-								<div class="img-content radius-1 over-hidden">
-									<img src="img/news/short-3.jpg" alt="">
-								</div>
-								<div class="desc-content m-v-15">
-									<h4>Lorem ipsum</h4>
-									<div class="content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-									</div>
-									<div class="date color-gray m-v-15"><p>12 Декабря 2017</p></div>
-									<div class="link-content">
-										<span class="color-1">
-											<a href="news-article.html" title="Lorem ipsum"><b>Подробнее</b></a>
-											<i class="fa p-l-15 fa-caret-right vam"></i>
-										</span>
-									</div>
-								</div>
-							</figure>
-							<figure class="bg-color-white p-h-20 p-v-20">
-								<div class="img-content">
-									<img src="img/news/short-4.jpg" alt="">
-								</div>
-								<div class="desc-content m-v-15">
-									<h4>Lorem ipsum</h4>
-									<div class="content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-									</div>
-									<div class="date color-gray m-v-15"><p>12 Декабря 2017</p></div>
-									<div class="link-content">
-										<span class="color-1">
-											<a href="news-article.html" title="Lorem ipsum"><b>Подробнее</b></a>
-											<i class="fa p-l-15 fa-caret-right vam"></i>
-										</span>
-									</div>
-								</div>
-							</figure>
-							
-						</div>
-					</div>
-				</div><!-- ./short-news -->
-
-				<!-- short-advert -->
-				<div class="short-advert bg-advert">
-					<div class="container p-v-30 over-hidden">
-						<div class="entry-header">
-							<h1 class="color-white">Анонсы</h1>
-						</div>
-						<div class="short-advert-carousel">
-
-							<div class="short-advert-items carousel-items m-v-30 figure-m-v-30">
-									
-								<figure>
-									<div class="img-content radius-1 over-hidden">
-										<img src="img/advert/1.jpg" alt="">
-									</div>
-									<div class="desc-content color-white m-v-15">
-										<h4>Lorem ipsum</h4>
-										<div class="content">
-											<p>
-												<a href="" title="" underline>
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod dolor sit amet consectetur
-												</a>
-											</p>
-										</div>
-									</div>
-								</figure>
-								<figure>
-									<div class="img-content radius-1 over-hidden">
-										<img src="img/advert/2.jpg" alt="">
-									</div>
-									<div class="desc-content color-white m-v-15">
-										<h4>Lorem ipsum</h4>
-										<div class="content">
-											<p>
-												<a href="" title="" underline>
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod dolor sit amet consectetur
-												</a>
-											</p>
-										</div>
-									</div>
-								</figure>
-								<figure>
-									<div class="img-content radius-1 over-hidden">
-										<img src="img/advert/3.jpg" alt="">
-									</div>
-									<div class="desc-content color-white m-v-15">
-										<h4>Lorem ipsum</h4>
-										<div class="content">
-											<p>
-												<a href="" title="" underline>
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod dolor sit amet consectetur
-												</a>
-											</p>
-										</div>
-									</div>
-								</figure>
-
+				<!-- pana-accordion -->
+				<div class="pana-accordion" id="accordion">
+					<div class="pana-accordion-wrap color-white">
+						<div class="pana-accordion-item">
+							<div class="img-content">
+								<img src="img/slider/slide-1.jpg">
 							</div>
-
-						</div>
-					</div>
-				</div><!-- ./short-advert -->
-
-				<!-- short-interview -->
-				<div class="short-interview">
-					<div class="container p-v-30 over-hidden">
-						<div class="entry-header">
-							<h1>Интервью</h1>
-						</div>
-						<div class="short-interview-items m-v-30 boxes-2 figure-m-v-30">
-
-							<figure class="p-h-30">
-								<div class="row">
-									<div class="img-content col-md-6 p-h-15">
-										<img src="img/interview/short-1.jpg" alt="" class="radius-1">
-									</div>
-									<div class="desc-content col-md-6 p-h-15">
-										<h4>Lorem ipsum</h4>
-										<a href="interview-article.html" underline title="Lorem ipsum">
-											<div class="content">
-												<p>Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-											</div>
-										</a>
-										<div class="bottom-content m-v-20">
-											<span class="color-1">
-												Александр А.
-											</span>	
-										</div>
-									</div>
+							<div class="desc-content">
+								<div>
+									<h1>Natural resources</h1>
+									<p>Our law firm specializes in the following main industry sectors: Natural Resourses, Banking and Finance, Technology, Media and Telecom, Trade and Services with a specific focus on cross-border corporate transaction for many years. Full service legal counsel with office in Tashkent, Uzbekistan. Contact us today to immediately schedule a consultation.</p>
+									<span class="btn-def m-auto m-v-30" style="width:220px">
+										<a href="">learn more</a>
+									</span>
 								</div>
-							</figure>
-							<figure class="p-h-30">
-								<div class="row">
-									<div class="img-content col-md-6 p-h-15">
-										<img src="img/interview/short-2.jpg" alt="" class="radius-1">
-									</div>
-									<div class="desc-content col-md-6 p-h-15">
-										<h4>Lorem ipsum</h4>
-										<a href="interview-article.html" underline title="Lorem ipsum">
-											<div class="content">
-												<p>Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-											</div>
-										</a>
-										<div class="bottom-content m-v-20">
-											<span class="color-1">
-												Александр А.
-											</span>	
-										</div>
-									</div>
-								</div>
-							</figure>
-							<figure class="p-h-30">
-								<div class="row">
-									<div class="img-content col-md-6 p-h-15">
-										<img src="img/interview/short-1.jpg" alt="" class="radius-1">
-									</div>
-									<div class="desc-content col-md-6 p-h-15">
-										<h4>Lorem ipsum</h4>
-										<a href="interview-article.html" underline title="Lorem ipsum">
-											<div class="content">
-												<p>Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-											</div>
-										</a>
-										<div class="bottom-content m-v-20">
-											<span class="color-1">
-												Александр А.
-											</span>	
-										</div>
-									</div>
-								</div>
-							</figure>
-							<figure class="p-h-30">
-								<div class="row">
-									<div class="img-content col-md-6 p-h-15">
-										<img src="img/interview/short-2.jpg" alt="" class="radius-1">
-									</div>
-									<div class="desc-content col-md-6 p-h-15">
-										<h4>Lorem ipsum</h4>
-										<a href="interview-article.html" underline title="Lorem ipsum">
-											<div class="content">
-												<p>Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-											</div>
-										</a>
-										<div class="bottom-content m-v-20">
-											<span class="color-1">
-												Александр А.
-											</span>	
-										</div>
-									</div>
-								</div>
-							</figure>
-
-						</div>
-					</div>
-				</div><!-- ./short-interview -->
-
-				<!-- short-journal -->
-				<div class="short-journal bg-color-gray">
-					<div class="container p-v-30">
-						<div class="entry-header">
-							<h1 class="color-1" align="center">Журналы</h1>
-						</div>
-						<div class="short-journal-carousel">
-
-							<div class="short-journal-items carousel-items row parag-m-v-5 m-v-30">
-									
-								<figure>
-									<div class="desc-content col-md-7 p-h-15 color-black m-v-15">
-										<h2>Выпуск 1</h2>
-										<div class="content">
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											</p>
-
-										</div>
-										<span class="btn-def col-xs-12 col-md-4 m-v-30">
-											<a href="journal-article.html" title="Перейти">Подробнее...</a>
-										</span>
-									</div>
-									<div class="img-content hidden-sm hidden-xs col-md-5 p-h-15 ">
-										<img src="img/other/journal-1.jpg" alt="">
-									</div>
-								</figure>
-								<figure>
-									<div class="desc-content col-md-7 p-h-15 color-black m-v-15">
-										<h2>Выпуск 1</h2>
-										<div class="content">
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											</p>
-
-										</div>
-										<span class="btn-def col-xs-12 col-md-4 m-v-30">
-											<a href="journal-article.html" title="Перейти">Подробнее...</a>
-										</span>
-									</div>
-									<div class="img-content hidden-sm hidden-xs col-md-5 p-h-15 ">
-										<img src="img/other/journal-1.jpg" alt="">
-									</div>
-								</figure>
-								<figure>
-									<div class="desc-content col-md-7 p-h-15 color-black m-v-15">
-										<h2>Выпуск 1</h2>
-										<div class="content">
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-											</p>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											</p>
-
-										</div>
-										<span class="btn-def col-xs-12 col-md-4 m-v-30">
-											<a href="journal-article.html" title="Перейти">Подробнее...</a>
-										</span>
-									</div>
-									<div class="img-content hidden-sm hidden-xs col-md-5 p-h-15 ">
-										<img src="img/other/journal-1.jpg" alt="">
-									</div>
-								</figure>
-
 							</div>
-
 						</div>
+						<div class="pana-accordion-item">
+							<div class="img-content">
+								<img src="img/slider/slide-2.jpg">
+							</div>
+							<div class="desc-content">
+								<div>
+									<h1>Natural resources</h1>
+									<p>Our law firm specializes in the following main industry sectors: Natural Resourses, Banking and Finance, Technology, Media and Telecom, Trade and Services with a specific focus on cross-border corporate transaction for many years. Full service legal counsel with office in Tashkent, Uzbekistan. Contact us today to immediately schedule a consultation.</p>
+									<span class="btn-def m-auto m-v-30" style="width:220px">
+										<a href="">learn more</a>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="pana-accordion-item">
+							<div class="img-content">
+								<img src="img/slider/slide-3.jpg">
+							</div>
+							<div class="desc-content">
+								<div>
+									<h1>Natural resources</h1>
+									<p>Our law firm specializes in the following main industry sectors: Natural Resourses, Banking and Finance, Technology, Media and Telecom, Trade and Services with a specific focus on cross-border corporate transaction for many years. Full service legal counsel with office in Tashkent, Uzbekistan. Contact us today to immediately schedule a consultation.</p>
+									<span class="btn-def m-auto m-v-30" style="width:220px">
+										<a href="">learn more</a>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="pana-accordion-item">
+							<div class="img-content">
+								<img src="img/slider/slide-4.jpg">
+							</div>
+							<div class="desc-content">
+								<div>
+									<h1>Natural resources</h1>
+									<p>Our law firm specializes in the following main industry sectors: Natural Resourses, Banking and Finance, Technology, Media and Telecom, Trade and Services with a specific focus on cross-border corporate transaction for many years. Full service legal counsel with office in Tashkent, Uzbekistan. Contact us today to immediately schedule a consultation.</p>
+									<span class="btn-def m-auto m-v-30" style="width:220px">
+										<a href="">learn more</a>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="pana-accordion-item" style="background-color: #4CAF50">
+							<div class="img-content">
+								<img src="img/slider/slide-5.jpg">
+							</div>
+							<div class="desc-content">
+								<div>
+									<h1>Natural resources</h1>
+									<p>Our law firm specializes in the following main industry sectors: Natural Resourses, Banking and Finance, Technology, Media and Telecom, Trade and Services with a specific focus on cross-border corporate transaction for many years. Full service legal counsel with office in Tashkent, Uzbekistan. Contact us today to immediately schedule a consultation.</p>
+									<span class="btn-def m-auto m-v-30" style="width:220px">
+										<a href="">learn more</a>
+									</span>
+								</div>
+							</div>
+						</div>
+	
 					</div>
-				</div><!-- ./short-journal -->
+				</div>
 
-				<!-- subscribe -->
-				<div class="subscribe">
+				<div class="short-advantages bg-color-black">
 					<div class="container">
-						<div class="subscribe-content row">
-						
-							<div class="desc-content pie-md-6 p-h-15 m-v-60">
-								<h2>Подпишитесь на рассылку новостей</h2>
-								<p>Будьте первым, кто узнает. Подпишитесь на рассылку новотей сегодня</p>
-							</div>
-							<div class="form-content pie-md-6 p-h-15 m-v-60">
-								<form method="POST" action="">
-									<div class="search-input">
-										<input class="tp-form-control color-black" name="query" value="" placeholder="Введите адрес электронной почты здесь">
-										<button type="submit" class="btn-res btn-search text-uppercase">Подписаться</button>
+						<div class="row">
+							<div class="cleafix short-advantages-items color-white m-v-15 boxes-5">
+								<figure>
+									<div class="img-content pie-md-3">
+										<div class="wrapper-circle pie-flex-center">
+											<img src="img/icons/pump.png" alt="" width="30">
+										</div>
 									</div>
-								</form>
+									<div class="desc-content pie-md-8 p-l-10">
+										<h4>Natural resources</h4>
+										<p>Our law firm specializes in the following main industry</p>
+									</div>
+								</figure>
+								
+								<figure>
+									<div class="img-content pie-md-3">
+										<div class="wrapper-circle pie-flex-center">
+											<img src="img/icons/money.png" alt="" width="25">
+										</div>
+									</div>
+									<div class="desc-content pie-md-8 p-l-10">
+										<h4>Natural resources</h4>
+										<p>Our law firm specializes in the following main industry</p>
+									</div>
+								</figure>
+								
+								<figure>
+									<div class="img-content pie-md-3">
+										<div class="wrapper-circle pie-flex-center">
+											<img src="img/icons/fingerprint.png" alt="" width="27">
+										</div>
+									</div>
+									<div class="desc-content pie-md-8 p-l-10">
+										<h4>Natural resources</h4>
+										<p>Our law firm specializes in the following main industry</p>
+									</div>
+								</figure>
+								
+								<figure>
+									<div class="img-content pie-md-3">
+										<div class="wrapper-circle pie-flex-center">
+											<img src="img/icons/mosaic.png" alt="" width="24">
+										</div>
+									</div>
+									<div class="desc-content pie-md-8 p-l-10">
+										<h4>Natural resources</h4>
+										<p>Our law firm specializes in the following main industry</p>
+									</div>
+								</figure>
+								
+								<figure>
+									<div class="img-content pie-md-3">
+										<div class="wrapper-circle pie-flex-center">
+											<img src="img/icons/forum.png" alt="" width="30" >
+										</div>
+									</div>
+									<div class="desc-content pie-md-8 p-l-10">
+										<h4>Natural resources</h4>
+										<p>Our law firm specializes in the following main industry</p>
+									</div>
+								</figure>
+								
 							</div>
-
 						</div>
 					</div>
-				</div><!-- ./subscribe -->
+				</div>
 
 			</div><!-- ./MAIN-CONTENT -->
 		</main><!-- ./MAIN -->
@@ -522,46 +302,64 @@
 		<footer id="footer" class="container-fluid text-center-sm bg-color-black">
 			<div class="container">
 				<div class="footer-content clearfix color-white">
-					<div class="row">
 
-						<div class="pie-md pie-dry p-h-15">
-							<div class="footer-logo p-v-30 m-v-30 m-auto">
-								<a href=""><img src="img/logo.png" atl="Ark Osiyo"></a>
+				<!-- short-partners -->
+				<div class="row short-partners">
+					<div class="container m-v-30">
+						<div class="short-partners-carousel flickity-btn-1 clearfix m-v-10">
+							<div class="carousel-items pie-cells-5">
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/1.png" alt="">
+										</div>
+									</a>
+								</figure>
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/2.png" alt="">
+										</div>
+									</a>
+								</figure>
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/3.png" alt="">
+										</div>
+									</a>
+								</figure>
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/4.png" alt="">
+										</div>
+									</a>
+								</figure>
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/5.png" alt="">
+										</div>
+									</a>
+								</figure>
+								<figure>
+									<a href="partners.html">
+										<div class="img-content">
+											<img src="img/partners/5.png" alt="">
+										</div>
+									</a>
+								</figure>
+								
+							</div>
+							<div class="carousel-prev-next hide">
+								<span class="next"> <i class="fa fa-angle-right"></i></span>
+								<span class="prev"> <i class="fa fa-angle-left"></i></span>
 							</div>
 						</div>
-
-						<div class="pie-md-5 hidden-xs hidden-md p-h-15">
-							<div class="footer-menu hover-underline hover-color-1">
-								<ul class="list-inline list-none list-unstyled">
-									<li><a href="about.html" title="Главная">О нас</a></li>
-									<li><a href="news.html" title="О компании">Новости</a></li>
-									<li><a href="advert.html" title="Партнеры">Анонс</a></li>
-									<li><a href="interview.html" title="Карьера">Интервью</a></li>
-									<li><a href="journals.html" title="Каталог">Журналы</a></li>
-									<li><a href="contacts.html" title="Контакты">Контакты</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="phones pie-md text-nowrap pie-dry p-h-15 m-v-30">
-							<span class="vam">
-								<img src="img/icons/phone-call.png" alt="">
-							</span>
-							<span class="vam p-l-15">
-								<p> +998 (97) 777-00-00 </p>
-								<p> +998 (97) 777-00-00 </p>
-							</span>
-						</div>
-
-						<div class="socicons pie-md-3 p-h-15 text-right-md m-v-30">
-							<ul class="list-inline">
-								<li><a href="" title="Телеграм"><i class="fa fa-telegram" alt=""></i></a></li>
-								<li><a href="" title="Фейсбук"><i class="fa fa-facebook" alt=""></i></a></li>
-								<li><a href="" title=""><i class="fa fa-instagram" alt=""></i></a></li>
-							</ul>
-						</div>
-
 					</div>
+				</div>
+
 
 					<div class="row">
 						<!-- DEV -->
@@ -583,13 +381,11 @@
 		</footer>
 
 	</div>
+
 	<!-- SCRIPTS -->
 	<script src="js/scripts.min.js"></script>
 	<script src="js/main.js"></script>
-	<!-- jQuery REVOLUTION Slider  -->
-	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-	
+
 </body>
 
 </html>

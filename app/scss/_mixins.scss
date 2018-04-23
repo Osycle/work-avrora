@@ -67,11 +67,14 @@
 		height: auto;
 		margin: 0 auto;
 		display: block;
-		@if $width == auto{
-			width: auto;
-		}
-		@else{
-			width: $width;
+		&:not([width]){
+
+			@if $width == auto{
+				width: auto;
+			}
+			@else{
+				width: $width;
+			}
 		}
 	}
 }

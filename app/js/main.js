@@ -2,11 +2,9 @@
 
 (function() {
   $(function() {
-    //WOW
-    new WOW({
-      offset: 30
-    }).init();
+  
 
+    
     // AOS
     AOS.init({
       offset: 100,
@@ -17,8 +15,21 @@
 
     setTimeout(function() {
       AOS.refresh();
-    }, 1000);
+    }, 1);
 
+    panaAccordion.init({
+      id: 'accordion',
+      expandWidth: 650,
+      //itemWidth: 100,
+      extpand: 2,
+      autoPlay: !true,
+      delay: 2500,
+      animateTime: 500,
+      borderWidth: 0,
+      //deviator: 10,
+      bounce:"-50px"
+    });
+  
     $("#min-menu").mmenu(
       {
         extensions: [
@@ -90,20 +101,21 @@
       x3: 30
     };
 
-    var jarticleCarousel = $(".jarticle-carousel .carousel-items").flickity({
-      imagesLoaded: true,
-      autoPlay: false,
-      pauseAutoPlayOnHover: true,
-      arrowShape: arrowStyle,
-      initialIndex: 1,
-      prevNextButtons: true,
-      draggable: true,
-      wrapAround: false,
-      pageDots: false,
-      contain: false,
-      percentPosition: true,
-      cellAlign: "center"
-    });
+    if( $(".short-partners-carousel .carousel-items figure").length > 3 )
+      $('.short-partners-carousel .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 2,
+        prevNextButtons: true,
+        draggable: true,
+        wrapAround: true,	
+        pageDots: false,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'center'
+      });
 
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
@@ -294,92 +306,7 @@
 
     preLoader.preImg();
 
-    window.revSlider = $(".rev-slider") || null;
-    var bannerSlider = $(".rev-slider").hasClass("banner-slider") || null;
-
-    onResized(function() {
-      if (revSlider)
-        revSlider.revolution({
-          delay: 6000,
-          startwidth: checkSm() ? $(window).width() : checkMd() ? 970 : 1170,
-          startheight: checkSm() ? 200 : bannerSlider ? 490 : 600,
-          autoHeight: "off",
-          fullScreenAlignForce: "off",
-
-          onHoverStop: "on",
-
-          thumbWidth: 100,
-          thumbHeight: 50,
-          thumbAmount: 3,
-
-          hideThumbsOnMobile: "on",
-          hideBulletsOnMobile: "on",
-          hideArrowsOnMobile: "on",
-          hideThumbsUnderResoluition: 0,
-
-          hideThumbs: -1,
-          hideTimerBar: "on",
-
-          keyboardNavigation: "off",
-
-          navigationType: "bullet",
-          navigationArrows: "solo", //solo
-          navigationStyle: "round",
-
-          navigationHAlign: "center",
-          navigationVAlign: "bottom",
-          navigationHOffset: 17,
-          navigationVOffset: 30,
-
-          soloArrowLeftHalign: "left",
-          soloArrowLeftValign: "center",
-          soloArrowLeftHOffset: 0,
-          soloArrowLeftVOffset: 0,
-
-          soloArrowRightHalign: "right",
-          soloArrowRightValign: "center",
-          soloArrowRightHOffset: 0,
-          soloArrowRightVOffset: 0,
-
-          touchenabled: "off",
-          swipe_velocity: "0.7",
-          swipe_max_touches: "1",
-          swipe_min_touches: "1",
-          drag_block_vertical: "false",
-
-          stopAtSlide: -1,
-          stopAfterLoops: -1,
-          hideCaptionAtLimit: 0,
-          hideAllCaptionAtLilmit: 0,
-          hideSliderAtLimit: 0,
-
-          fullWidth: "on",
-          fullScreen: "off",
-          //fullScreenOffsetContainer: "#header",
-
-          dottedOverlay: "none",
-          forceFullWidth: "off",
-
-          shadow: 0
-        });
-    });
-    if (revSlider.length) {
-      var prevnext = $(".tparrows").append(
-        '<svg viewBox="0 0 100 100"><path d="M 10,50 L 50,85 L 55,75 L 30,50  L 55,25 L 50,15 Z" class="arrow"></path></svg>'
-      );
-      $(".arrow-container.container")
-        .append(prevnext)
-        .css("top", "350");
-      $(".arrow-container.container").css(
-        "top",
-        "-" +
-          $(".rev-slider")
-            .css("height")
-            .match(/(\d+)/gim)[0] /
-            2 +
-          "px"
-      );
-    }
+  
   });
 })(jQuery);
 
