@@ -4,7 +4,7 @@
 
 
 %img-bg-contain{
-	background-repeat: no-repeat;
+	backgrouh1nd-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
 }
@@ -36,7 +36,7 @@
 	margin-left: -+($mrow)+%;
 	margin-right: -+( $mrow )+%;
 //100/$item
-	#{$tag}{
+	#{$tag}, .boxes-cell{
 		margin-left:  ($mrow)+%;
 		margin-right:  ($mrow)+%;
 		//width: ( ($width/$item)+( $item / ( $item * 10) ) )+%;
@@ -48,7 +48,7 @@
 [class*="boxes"]{	
 	//text-align: center;
 
-	&>div, &>figure{
+	&>div, &>figure, &>.boxes-cell{
 		display: inline-table;
 		vertical-align: top;
 		.img-content {
@@ -966,7 +966,7 @@ h1, h2, h3, h4{
 h1{
 	position: relative;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: em(33, 16);
 	padding-bottom: 0;
 	font-family: $font-family-2;
@@ -979,6 +979,7 @@ h2{
 	margin-bottom: 10px;
 } 
 h3{
+	text-transform: uppercase;
 	font-weight: 600;
 	font-size: em(20, 16);
 }
@@ -1352,7 +1353,17 @@ a[target="_blank"]{
 
 
 
-
+//.short-contacts
+.short-contacts-items{
+	.short-contacts-item{
+		h3{
+			padding: 5px 20px;
+			display: inline-block;
+			color: $color-1;
+			border-bottom: 1px solid $color-1;
+		}
+	}
+}
 
 
 
@@ -1396,7 +1407,11 @@ a[target="_blank"]{
 }
 .footer-menu{
 	li{
-		width: 49%;
+		margin: 5px 0;
+		width: 32%;
+		a:hover{
+			letter-spacing: 0.5px;
+		}
 	}
 }
 

@@ -421,7 +421,7 @@ label{
 .color-3{color: $color-3;}
 .color-4{color: $color-4;}
 
-[class*="hover-color"] a{transition: all 0.3s ease-in-out;}
+[class*="hover-color"] a, .hover-underline a{transition: all 0.3s ease;}
 
 .hover-color-1 a:hover{color: $color-1;}
 .hover-color-2 a:hover{color: $color-2;}
