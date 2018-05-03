@@ -81,7 +81,7 @@
 
 
 
-@mixin align-cells( $width: 75, $item: 3, $style: table, $tag: figure ) {
+@mixin align-cells( $width: 75, $item: 3, $style: table, $tag: figure, $imgWidth: auto ) {
 
 	$mrow : ( (100 - $width)/($item*2) )+%;
 	
@@ -108,7 +108,7 @@
 			display: inline-table;
 			vertical-align: top;
 			width: ($width/$item)+%;
-			@include img-auto-adaptive();
+			@include img-auto-adaptive($imgWidth);
 
 
 		}
