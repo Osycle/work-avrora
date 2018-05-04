@@ -2,9 +2,9 @@
 
 (function() {
   $(function() {
-  
 
-    
+
+
     // AOS
     AOS.init({
       offset: 100,
@@ -16,52 +16,60 @@
     setTimeout(function() {
       AOS.refresh();
     }, 1);
-
+    if( typeof panaAccordion === "object" )
     panaAccordion.init({
       id: 'accordion',
-      expandWidth: 650,
+      expandWidth: checkXs() ? 280 : checkSm() ? 400 : 650,
       //itemWidth: 100,
       extpand: 2,
-      autoPlay: !true,
+      autoPlay: false,
       delay: 2500,
       animateTime: 500,
       borderWidth: 0,
-      //deviator: 10,
-      bounce:"-50px"
-    });
-  
-    $("#min-menu").mmenu(
-      {
-        extensions: [
-          "pagedim-black", // wrapper-bg black
-          "theme-dark",
-          //"fullscreen",
-          //"listview-50",
-          //"fx-panels-slide-up",
-          //"fx-listitems-drop",
-          "border-offset",
-          "position-front",
-          "position-right"
-        ],
-        navbar: {
-          title: "Меню"
-        },
-        navbars: [
-          {
-            height: 2,
-            content: [
-              '<div class="close-btn close-content bar">' +
-                '<a  href="#page" ><span class="icon-bar"></span><span class="icon-bar"></span></a>' +
-                "</div>"
-            ]
-          },
-          {
-            content: ["prev", "title"]
-          }
-        ]
+      deviator: 0,
+      callback: function( el ){
+        var itemNum = $(el).attr("data-pana-item");
+        $(".short-advantages-items [data-pana-item]").removeClass("active");
+        var figure = $(".short-advantages-items [data-pana-item='"+itemNum+"']").removeClass("active").addClass("active")
+        //console.log( pana );
       },
-      {}
-    );
+      bounce: "-5px"
+    });
+    $("#accordion .pana-accordion-item").map(function(i, el){
+      $(el).attr("data-pana-item", (i+1));
+    })
+    $(".short-advantages-items [data-pana-item]").on("click", function(){
+      var itemNum = $(this).attr("data-pana-item");
+      $("#accordion [data-pana-item='"+itemNum+"']").trigger("click");
+    })
+    $("#min-menu").mmenu({
+      extensions: [
+        "pagedim-black", // wrapper-bg black
+        "theme-dark",
+        //"fullscreen",
+        //"listview-50",
+        //"fx-panels-slide-up",
+        //"fx-listitems-drop",
+        "border-offset",
+        "position-front",
+        "position-right"
+      ],
+      navbar: {
+        title: "Меню"
+      },
+      navbars: [{
+          height: 2,
+          content: [
+            '<div class="close-btn close-content bar">' +
+            '<a  href="#page" ><span class="icon-bar"></span><span class="icon-bar"></span></a>' +
+            "</div>"
+          ]
+        },
+        {
+          content: ["prev", "title"]
+        }
+      ]
+    }, {});
 
     // Flikity Carousel
     function flickityPrevNext(className) {
@@ -101,7 +109,7 @@
       x3: 30
     };
 
-    if( $(".short-partners-carousel .carousel-items figure").length > 3 )
+    if ($(".short-partners-carousel .carousel-items figure").length > 3)
       $('.short-partners-carousel .carousel-items').flickity({
         imagesLoaded: true,
         autoPlay: false,
@@ -110,7 +118,7 @@
         initialIndex: 2,
         prevNextButtons: true,
         draggable: true,
-        wrapAround: true,	
+        wrapAround: true,
         pageDots: false,
         contain: false,
         percentPosition: true,
@@ -123,48 +131,12 @@
         afterShow: function(instance, current) {},
         transitionEffect: "zoom-in-out"
       });
-    //if( $("[data-fancybox='journal']").length != 0 )
     $("[data-fancybox]").fancybox({
       afterShow: function(instance, current) {
         jarticleCarousel.flickity("resize");
       }
     });
 
-    //$.fancybox.open('');
-    if ($(".short-advert-carousel .carousel-items figure").length > 1)
-      var carouselAdvert = $(".short-advert-carousel .carousel-items").flickity(
-        {
-          imagesLoaded: true,
-          autoPlay: false,
-          pauseAutoPlayOnHover: true,
-          arrowShape: arrowStyle,
-          initialIndex: 1,
-          prevNextButtons: false,
-          draggable: true,
-          wrapAround: false,
-          pageDots: true,
-          contain: false,
-          percentPosition: true,
-          cellAlign: "center"
-        }
-      );
-
-    var carouselJournal = $(".short-journal-carousel .carousel-items").flickity(
-      {
-        imagesLoaded: true,
-        autoPlay: false,
-        pauseAutoPlayOnHover: true,
-        arrowShape: arrowStyle,
-        initialIndex: 1,
-        prevNextButtons: true,
-        draggable: false,
-        wrapAround: true,
-        pageDots: !true,
-        contain: false,
-        percentPosition: true,
-        cellAlign: "center"
-      }
-    );
 
     window.carouselArticle = function() {
       if ($(".carousel-article").length >= 0) {
@@ -255,14 +227,14 @@
           }, endtime);
         var preBox = $(this.preBox);
 
-        bool || this.status
-          ? preBox.removeClass("in").setTimeout(function() {
-              $(preBox).hide();
-            }, endtime)
-          : preBox
-              .show()
-              .addClass("in")
-              .find(".box-content");
+        bool || this.status ?
+          preBox.removeClass("in").setTimeout(function() {
+            $(preBox).hide();
+          }, endtime) :
+          preBox
+          .show()
+          .addClass("in")
+          .find(".box-content");
 
         return (this.status = !this.status);
       },
@@ -306,7 +278,7 @@
 
     preLoader.preImg();
 
-  
+
   });
 })(jQuery);
 
@@ -331,6 +303,9 @@ setTimeout(function() {
 function checkSm() {
   return $(document).width() <= 991;
 }
+function checkXs() {
+  return $(document).width() <= 767;
+}
 function checkMd() {
   return $(document).width() < 1199 && !checkSm();
 }
@@ -342,6 +317,7 @@ function getRandomInt(min, max) {
 function getRandomIntFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
+
 function onResized(f) {
   if (typeof f === "function") f();
   $(window).on("resize", function(e) {
@@ -349,6 +325,7 @@ function onResized(f) {
   });
   return this;
 }
+
 function scrolledDiv(el) {
   try {
     var docViewTop = $(window).scrollTop(),

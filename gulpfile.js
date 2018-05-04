@@ -56,7 +56,7 @@ gulp.task('scripts', () =>
 			//app+'/js/konva.min.js',
 			//app+'/js/KonvaPlugin.js',
 			//app+'/js/jquery.fractionslider.js',
-			app+'/js/pana-accordion.js',
+			//app+'/js/pana-accordion.js',
 			app+'/js/aos.js',
 			//app+'/js/wow.js',
 			//app+'/js/skrollr.min.js',

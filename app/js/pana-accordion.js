@@ -30,6 +30,7 @@ var panaAccordion= {
 			borderWidth: 1,
 			autoPlay: true,
 			deviator: 30,
+			callback: function(){},
 			bounce:"-50px"
 		},options);
 		that.initDom(options);
@@ -43,6 +44,10 @@ var panaAccordion= {
 				$items=$("#"+options.id).find(".pana-accordion-item");
 
 		$items.on("click",function(){
+
+			if( typeof options.callback )
+				options.callback(this);
+
 			if(options.autoPlay){
 				that.clearAnimate();
 			}
