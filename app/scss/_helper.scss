@@ -557,18 +557,16 @@ html{
 	}
 }
 
-
+.vam{
+	vertical-align: middle;
+	display: inline-block;
+}
 .vam-table{
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 }
-.vam{
-	vertical-align: middle;
-}
-.vab{
-	vertical-align: baseline;
-}
+
 
 .over-hidden{
 	overflow: hidden;

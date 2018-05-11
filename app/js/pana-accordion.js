@@ -83,8 +83,10 @@ var panaAccordion= {
 		that.clearAnimate();
 		that.delay=setTimeout(function(){
 			$next=$("#"+options.id).find(".active").next();
+			options.callback( $next ) //edit
 			if($next.length==0) {
 				$next=$("#"+options.id).find(".pana-accordion-item:eq(0)");
+				options.callback( $next )
 			}
 			that.active(options,$next);
 			that.autoPlay(options);
