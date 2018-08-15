@@ -355,9 +355,16 @@ $header-min-menu: 100px;
 	transform-origin: 50% 0;
 	transform: none;
 	transform: unset;
+	background-color: #0098af;
 	//clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 	p, strong{
 		line-height: 140%;
+	}
+	.btn-opacity{
+		&:hover{
+			border-color: $color-2;
+    	color: $color-2;
+		}
 	}
 }
 .header-top-before{
@@ -1463,7 +1470,7 @@ a[target="_blank"]{
 			}
 		}
 		p{
-			color: rgba(white, 0.3);
+			color: black;
 		}
 		h4{
 			color: $color-1;
@@ -1654,72 +1661,206 @@ html body{
 
 
 // FLICKITY 
+// .carousel-prev-next{
+// 	color: inherit;
+//   position: relative;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   pointer-events: none;
+//   *{
+//   	pointer-events: auto;
+//   }
+// 	.next, .prev{
+
+// 		font-size: 45px;
+// 		position: absolute;
+// 		transform: translateY( -50% );
+// 		top: 50%;
+// 		color: $color-1;
+// 		&:hover{
+// 			cursor: pointer;
+// 			color: $color-1;
+// 		}
+// 	}
+// 	.next{
+// 		right: 0;
+// 	}
+// 	.prev{
+// 		left: 0;
+// 	}
+// }
+// .flickity-btn-1{
+
+// 	.flickity-prev-next-button{
+// 		background: transparent;
+// 		//border: 4px solid white;
+// 		transition: all 0.2s ease-in-out;
+
+// 		&:hover, &:focus{
+// 			background-color: transparent;
+// 		}
+// 		.arrow{
+// 			fill: $color-1;
+// 		}
+// 		&.previous{
+// 			left: -5px;
+// 		}
+// 		&.next{
+// 			right: -5px;
+// 		}
+
+// 		@media ( min-width:992px ){
+// 			.previous svg{
+// 				left: -20%;
+// 			}
+// 			.next svg{
+// 				right: -20%;
+// 			}
+// 		}
+
+// 	}
+
+// }
+
+
+
+
+
+// ---FLICKITY---
 .carousel-prev-next{
 	color: inherit;
+	z-index:2;	
   position: relative;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
   pointer-events: none;
   *{
   	pointer-events: auto;
   }
 	.next, .prev{
+		font-size: 20px;
+		width: 40px;
 
-		font-size: 45px;
+		border: 0;
+		background-color: transparent;
 		position: absolute;
-		transform: translateY( -50% );
 		top: 50%;
-		color: $color-1;
+		//margin-top: -2.25px;
+		color: black;
+		fill: $color-1;
 		&:hover{
 			cursor: pointer;
 			color: $color-1;
 		}
+
 	}
 	.next{
-		right: 0;
+		right: 15px;
+		text-align: right;
+		&.reverse{
+			transform: scaleX(-1) translateY(-50%);
+		}
 	}
 	.prev{
-		left: 0;
+		left: 15px;
+		&.reverse{
+			transform: scaleX(-1) translateY(-50%);
+		}
 	}
 }
 .flickity-btn-1{
 
 	.flickity-prev-next-button{
 		background: transparent;
-		//border: 4px solid white;
-		transition: all 0.2s ease-in-out;
-
+		transition: all 0.3s ease;
+		top: 50%;
+		width: 40px;
+		z-index:2;
+		transform: translateY(-50%) scale(0.8);
 		&:hover, &:focus{
 			background-color: transparent;
+			.arrow{
+				fill: $color-1;
+			}
 		}
 		.arrow{
-			fill: $color-1;
-		}
-		&.previous{
-			left: -5px;
-		}
-		&.next{
-			right: -5px;
+			fill: $color-3;
 		}
 
-		@media ( min-width:992px ){
-			.previous svg{
-				left: -20%;
+		&.previous{
+			left: 0;
+		}
+		&.next{
+			right: 0;
+			svg{
+				top: 0px;
 			}
-			.next svg{
-				right: -20%;
+		}
+		svg{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		@media ( min-width:992px ){
+
+		}
+
+	}
+	&.flickity-btn-hidden{
+		.flickity-prev-next-button{
+			opacity: 0;
+		}
+		&:hover{
+			.flickity-prev-next-button{
+				opacity: 1;
+			}
+		}
+	}
+}
+.flickity-page-dots{
+	margin: 30px 0;
+	z-index: 1;
+	margin-bottom: 50px;
+	.dot{
+		transition: all 0.3s ease;
+		background-color: white;
+		opacity: 1;
+		border-radius: 50%;
+  	width: 11px;
+  	height: 11px;
+		&.is-selected{
+			transform: scale(1.4);
+			background-color: $color-1;
+		}
+	}
+}
+.prev-next-dots{
+	.carousel-prev-next{
+		position: relative;
+		.next{
+		}
+		.prev, .next{
+			left: inherit; left: unset;
+			right: inherit; right: unset;
+			top: 50%;
+    	margin-top: -22.5+1px;
+		}
+		.prev{
+			transform: translateX(-100%);
+			&.reverse{
+				transform: translateX(-100%) scaleX(-1);
 			}
 		}
 
 	}
-
 }
-
-
-
-
 
 
 .carousel-article{
@@ -1808,7 +1949,87 @@ html body{
 	}
 }
 
+//bnr-slider
+//--bnr-slider
+.bnr-slider{
+	position: relative;
+	overflow: hidden;
+	.flickity-slider{
+		transform: inherit !important;
+	}
+	.carousel-prev-next{
+		width: inherit;
+		left: 50%;
+		transform: translateX(-50%);
+		//position: relative;
+	}
+	figure{
+		width: 100%;
+		height: 700px;
+		transition: all 2s ease;
+		left: 0 !important;
+		.img{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+	    background-size: cover;
+	    background-position: center;
+	   	filter: blur(0px) brightness(120%);
+			transition: 
+									transform 1.2s ease,
+									opacity 1s ease-in-out,
+									filter 1s linear 0.5s;
+		}
+		opacity: 0;
+		&.is-selected{
+			z-index: 1;
+			opacity: 1;
+			.img{
+				filter: blur(0);
+			}
+		}
+	}
+	.desc-content{
+		padding: 15px 20px;
+		color: white;
+	}
+	.bg-shadow{
+		z-index: 1;
+		background-color: rgba(black, 0.5);
+	}
+	.pie-flex-center{
+		z-index: 2;
+		position: relative;
+	}
+	@media(min-width: 992px) {
+		.carousel-header-block{
+			left: 30px;
+		}
+	}
+	@media(max-width: 991px) {
+		font-size: 0.7em;
+		figure{
+			height: 300px;
+		}
+		.flickity-page-dots{
+			display: none;
+		}
+		.img{
+			background-color: $color-2;
+			background-position: center;
+			background-size: 150%;
+	    background-position: center;
+		}
+		.carousel-prev-next{
+			width: 100%;
+		}
+	}
+	@media(max-width:370px) {
+		word-wrap: break-word;
+	}
 
+
+}
 
 //PANA
 .pana-accordion {

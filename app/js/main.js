@@ -118,13 +118,52 @@
         initialIndex: 2,
         prevNextButtons: true,
         draggable: true,
-        wrapAround: true,
+        wrapAround: false,
         pageDots: false,
         contain: false,
         percentPosition: true,
         cellAlign: 'center'
       });
-
+    /*bnr-carousel*/
+    if( $(".bnr-carousel .carousel-items figure").length ){
+      window.bnrCarousel = $(".bnr-carousel .carousel-items").flickity({
+        imagesLoaded: true,
+        autoPlay: 6000,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 0,
+        friction: 1,
+        selectedAttraction: 1,
+        prevNextButtons: false,
+        draggable: false,
+        wrapAround: true,
+        pageDots: true,
+        contain: false,
+        percentPosition: true,
+        cellSelector: 'figure',
+        cellAlign: "center"
+      });
+      bnrCarousel.data("flickity");
+      //arrows
+      flickityPrevNext(".bnr-carousel");
+      //dots
+      for( var i = 0; i < $(bnrCarousel).find("figure").length; i++){
+        bnrCarousel.siblings().find(".button-carousel-nav ul").append('<li role="button" class="button"></li>');
+      }
+      bnrCarousel.on( 'select.flickity', function( event, index ) {
+        var index = $(this).find("figure.is-selected").index();
+        $(this).siblings()
+              .find(".button-carousel-nav ul .button")
+              .eq(index)
+              .addClass("is-selected")
+              .siblings()
+              .removeClass("is-selected");
+      });
+      $('.bnr-carousel .button-carousel-nav').on( 'click', 'li', function() {
+        var index = $(this).index();
+        bnrCarousel.flickity( 'select', index );
+      });
+    }
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
       $("[data-fancybox='gallery']").fancybox({
