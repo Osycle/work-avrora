@@ -153,17 +153,23 @@
       bnrCarousel.on( 'select.flickity', function( event, index ) {
         var index = $(this).find("figure.is-selected").index();
         $(this).siblings()
-              .find(".button-carousel-nav ul .button")
+              .find(".button-carousel-nav ul .button").add(".short-advantages-items figure")
               .eq(index)
               .addClass("is-selected")
               .siblings()
               .removeClass("is-selected");
       });
-      $('.bnr-carousel .button-carousel-nav').on( 'click', 'li', function() {
+      $('.bnr-carousel .button-carousel-nav li').add(".short-advantages-items figure").on( 'click', function() {
         var index = $(this).index();
         bnrCarousel.flickity( 'select', index );
       });
     }
+    $('.button-carousel-nav').on('click', 'figure', function() {
+			var that = $(this);
+			var selector = that.attr('data-selector');
+			that.addClass("is-selected");
+			that.siblings().removeClass("is-selected");
+		});
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
       $("[data-fancybox='gallery']").fancybox({
