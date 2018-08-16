@@ -10981,7 +10981,7 @@ http://flickity.metafizzy.co
   display: block; }
   @media (max-width: 991px) {
     .header-hidden {
-      height: 100px; } }
+      height: 80px; } }
 
 .header-top-content {
   -webkit-transition: all 0.3s ease-out 0.0s, visibility 0.0s ease 0s;
@@ -11246,7 +11246,7 @@ http://flickity.metafizzy.co
   transform: none;
   position: fixed;
   top: 0;
-  height: 100px;
+  height: 80px;
   padding: 10px 25px;
   z-index: 100;
   color: white;
@@ -11259,10 +11259,10 @@ http://flickity.metafizzy.co
     background-position: left;
     opacity: 0.05; }
   .min-menu-header .min-menu-logo {
-    padding: 20px 0;
+    padding: 6px 0;
     width: 130px; }
   .min-menu-header .min-menu-bar {
-    padding: 10px 0; }
+    padding: 0px 0; }
 
 .mm-opening .min-menu-header {
   opacity: 0;
@@ -12307,8 +12307,8 @@ html body .tp-bullets.simplebullets.round .bullet {
       font-size: 0.7em; }
       .bnr-slider figure {
         height: 300px; }
-      .bnr-slider .flickity-page-dots {
-        display: none; }
+        .bnr-slider figure h1 {
+          font-size: 1.5em; }
       .bnr-slider .img {
         background-color: #006c7c;
         background-position: center;
@@ -12316,7 +12316,8 @@ html body .tp-bullets.simplebullets.round .bullet {
         background-size: 150%;
         background-position: center; }
       .bnr-slider .carousel-prev-next {
-        width: 100%; } }
+        width: 100%;
+        opacity: 0.5; } }
   @media (max-width: 370px) {
     .bnr-slider {
       word-wrap: break-word; } }
